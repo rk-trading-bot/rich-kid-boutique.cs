@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RichKid Boutique | Elite Swimwear</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: black; color: white; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .gold-glow { filter: drop-shadow(0 0 15px rgba(234, 179, 8, 0.5)); }
+        .product-card { transition: all 0.4s ease; border: 1px solid #18181b; position: relative; background: #09090b; border-radius: 2rem; overflow: hidden; }
+        .product-card:hover { transform: translateY(-8px); border-color: #eab308; }
+        .sale-badge { background: linear-gradient(45deg, #ef4444, #b91c1c); position: absolute; top: 1rem; left: 1rem; z-index: 10; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.6rem; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+    </style>
+</head>
+<body>
+
+    <header class="sticky top-0 z-50 bg-black/95 backdrop-blur-xl border-b border-zinc-900 py-8 px-4 text-center">
+        <h1 class="text-5xl font-black text-yellow-500 tracking-tighter gold-glow uppercase italic">RichKid</h1>
+        <p class="text-[10px] tracking-[0.7em] text-zinc-500 font-bold uppercase mt-2">Boutique</p>
+    </header>
+
+    <nav class="flex justify-center gap-3 py-6 bg-zinc-950 border-b border-zinc-900 overflow-x-auto whitespace-nowrap px-4">
+        <a href="#hot-deals" class="text-[9px] font-black tracking-widest border border-red-500 text-red-500 px-4 py-2 rounded-full hover:bg-red-500 hover:text-white transition-all">HOT DEALS $3000</a>
+        <a href="#essential" class="text-[9px] font-black tracking-widest border border-zinc-700 px-4 py-2 rounded-full hover:bg-white hover:text-black transition-all">ESSENTIAL $3500</a>
+        <a href="#signature" class="text-[9px] font-black tracking-widest border border-zinc-700 px-4 py-2 rounded-full hover:bg-white hover:text-black transition-all">SIGNATURE $4000</a>
+        <a href="#elite" class="text-[9px] font-black tracking-widest border border-yellow-500/50 text-yellow-500 px-4 py-2 rounded-full hover:bg-yellow-500 hover:text-black transition-all">ELITE $5000</a>
+    </nav>
+
+    <section id="hot-deals" class="py-16 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-black tracking-tighter uppercase italic text-red-500">Limited Hot Deals</h2>
+            <p class="text-zinc-500 font-bold tracking-[0.3em] text-[10px] uppercase mt-2">15 Exclusive Styles • $3,000 JMD</p>
+        </div>
+        <div id="hot-deals-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            </div>
+    </section>
+
+    <section id="essential" class="py-16 px-6 bg-zinc-950 border-y border-zinc-900">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-black tracking-tighter uppercase text-zinc-400">The Essentials</h2>
+                <p class="text-zinc-600 font-bold tracking-[0.3em] text-[10px] uppercase mt-2">15 Classic Styles • $3,500 JMD</p>
+            </div>
+            <div id="essential-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                </div>
+        </div>
+    </section>
+
+    <section id="signature" class="py-16 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-black tracking-tighter uppercase text-zinc-200">Signature Collection</h2>
+            <p class="text-zinc-500 font-bold tracking-[0.3em] text-[10px] uppercase mt-2">15 Deluxe Styles • $4,000 JMD</p>
+        </div>
+        <div id="signature-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            </div>
+    </section>
+
+    <section id="elite" class="py-16 px-6 bg-zinc-950 border-t border-zinc-900">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-black tracking-tighter uppercase italic text-yellow-500">The Elite Tier</h2>
+                <p class="text-yellow-700 font-bold tracking-[0.3em] text-[10px] uppercase mt-2">15 Premium 3-Piece Sets • $5,000 JMD</p>
+            </div>
+            <div id="elite-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                </div>
+        </div>
+    </section>
+
+    <footer class="py-20 text-center border-t border-zinc-900">
+        <p class="text-[10px] font-bold tracking-[0.5em] text-zinc-600 uppercase">© 2026 RichKid Boutique • Mandeville, Jamaica</p>
+        <p class="text-zinc-400 font-black mt-4 tracking-widest">1-876-304-7407</p>
+    </footer>
+
+    <script>
+        function createBlocks(gridId, count, price, prefix, showBadge, imgHeight) {
+            const grid = document.getElementById(gridId);
+            for (let i = 1; i <= count; i++) {
+                const badge = showBadge ? `<div class="sale-badge">HOT DEAL</div>` : '';
+                grid.innerHTML += `
+                    <div class="product-card">
+                        ${badge}
+                        <img src="${prefix}${i}.jpg" class="w-full ${imgHeight} object-cover bg-zinc-800" alt="RichKid Swimwear">
+                        <div class="p-6">
+                            <h3 class="text-[10px] font-bold uppercase tracking-widest text-zinc-500">${prefix} Style ${i}</h3>
+                            <p class="text-xl font-black text-white mt-1 mb-4">$${price}</p>
+                            <button onclick="order('${prefix} Style ${i}', '${price}')" class="w-full bg-white text-black py-3 rounded-xl font-black hover:bg-yellow-500 transition-all uppercase text-[9px] tracking-widest">Order Now</button>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // Generate the 60 blocks with different image sizes for variety
+        createBlocks('hot-deals-grid', 15, '3,000', 'Deal', true, 'h-[300px]');
+        createBlocks('essential-grid', 15, '3,500', 'Essential', false, 'h-[300px]');
+        createBlocks('signature-grid', 15, '4,000', 'Signature', false, 'h-[400px]');
+        createBlocks('elite-grid', 15, '5,000', 'Elite', false, 'h-[450px]');
+
+        function order(name, price) {
+            const msg = `Hi RichKid Boutique! ⚜️ I want to order the ${name} ($${price} JMD). Is it available?`;
+            window.open(`https://wa.me/18763047407?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
