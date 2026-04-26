@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RichKid Boutique | Elite Swimwear</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;1,900&family=Inter:wght@300;900&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #050505; color: white; font-family: 'Inter', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
+        .gold-glow { text-shadow: 0 0 20px rgba(234, 179, 8, 0.6); }
+        .serif { font-family: 'Bodoni Moda', serif; }
+        .product-card { transition: all 0.4s ease; border: 1px solid #18181b; position: relative; background: #09090b; border-radius: 1.5rem; overflow: hidden; }
+        .product-card:hover { transform: translateY(-10px); border-color: #eab308; box-shadow: 0 10px 30px rgba(234, 179, 8, 0.1); }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        @keyframes marquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+        .marquee-text { display: inline-block; animation: marquee 20s linear infinite; }
+        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(0,0,0,0.5); z-index: 100; transition: all 0.3s; }
+        .header-bg { 
+            background: linear-gradient(to bottom, rgba(0,0,0,0.6), #050505), url('boutique-header.png');
+            background-size: cover; background-position: center; min-height: 60vh;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-yellow-500 text-black py-2 overflow-hidden whitespace-nowrap border-b border-black z-[60] relative font-black text-[10px] tracking-widest uppercase">
+        <div class="marquee-text">⚜️ RICHKID BOUTIQUE: NATIONWIDE DELIVERY IN JAMAICA • NEW STYLES ADDED WEEKLY • SHOP THE HOT DEALS ⚜️</div>
+    </div>
+
+    <section class="header-bg flex flex-col items-center justify-center text-center px-4 border-b border-zinc-900">
+        
+        <img src="RichKid-Logo.png" 
+             onerror="this.style.display='none'" 
+             class="max-w-[280px] md:max-w-[400px] mb-4 gold-glow" 
+             alt="RichKid Boutique Logo">
+
+        <h1 class="text-7xl md:text-9xl font-black text-yellow-500 tracking-tighter gold-glow uppercase italic serif">RichKid</h1>
+        <p class="text-[10px] tracking-[1.2em] text-white font-bold uppercase mt-4 mb-8">Boutique</p>
+        <div class="h-[1px] w-32 bg-yellow-500"></div>
+    </section>
+
+    <nav class="sticky top-0 z-50 bg-black/90 backdrop-blur-xl border-b border-zinc-900 py-4 flex justify-center gap-2 overflow-x-auto px-4">
+        <a href="#deals" class="text-[8px] font-black tracking-widest bg-red-600 text-white px-4 py-2 rounded-full uppercase">Hot Deals $3K</a>
+        <a href="#essential" class="text-[8px] font-black tracking-widest border border-zinc-700 px-4 py-2 rounded-full text-zinc-400 uppercase">Essential $3.5K</a>
+        <a href="#signature" class="text-[8px] font-black tracking-widest border border-zinc-700 px-4 py-2 rounded-full text-zinc-400 uppercase">Signature $4K</a>
+        <a href="#elite" class="text-[8px] font-black tracking-widest border border-yellow-500 text-yellow-500 px-4 py-2 rounded-full uppercase">Elite $5K</a>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 py-12">
+        <div id="deals" class="mb-24 reveal"><h2 class="text-3xl font-black italic uppercase text-red-500 mb-2">Hot Deals</h2><div id="grid-3000" class="grid grid-cols-2 md:grid-cols-5 gap-4"></div></div>
+        <div id="essential" class="mb-24 reveal"><h2 class="text-3xl font-black uppercase text-zinc-300 mb-2">The Essentials</h2><div id="grid-3500" class="grid grid-cols-2 md:grid-cols-5 gap-4"></div></div>
+        <div id="signature" class="mb-24 reveal"><h2 class="text-3xl font-black uppercase text-zinc-100 mb-2">Signature Styles</h2><div id="grid-4000" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div></div>
+        <div id="elite" class="mb-24 reveal"><h2 class="text-3xl font-black italic uppercase text-yellow-500 mb-2">The Elite Tier</h2><div id="grid-5000" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div></div>
+    </main>
+
+    <footer class="py-20 border-t border-zinc-900 text-center">
+        <p class="serif italic text-2xl mb-4 text-zinc-500 italic uppercase">RichKid Boutique</p>
+        <p class="text-[9px] tracking-[0.5em] text-zinc-700 uppercase">Mandeville, Jamaica • 1-876-304-7407</p>
+    </footer>
+
+    <a href="https://wa.me/18763047407" class="wa-float" target="_blank">
+        <svg width="35" height="35" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326z"/></svg>
+    </a>
+
+    <script>
+        function createGrid(containerId, count, price, prefix, imgHeight) {
+            const container = document.getElementById(containerId);
+            for (let i = 1; i <= count; i++) {
+                container.innerHTML += `
+                    <div class="product-card">
+                        <div class="relative ${imgHeight} bg-zinc-800">
+                            <img src="${prefix}${i}.png" 
+                                 onerror="this.onerror=null; this.src='${prefix}${i}.jpg';" 
+                                 class="w-full h-full object-cover" 
+                                 alt="RichKid Boutique">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-[9px] font-bold uppercase tracking-widest text-zinc-500 mb-1">${prefix} style ${i}</h3>
+                            <p class="text-xl font-black mb-4">$${price}</p>
+                            <button onclick="order('${prefix} style ${i}', '${price}')" class="w-full bg-white text-black py-3 rounded-lg font-black uppercase text-[8px] tracking-[0.2em] hover:bg-yellow-500 transition-all">Order Now</button>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        createGrid('grid-3000', 15, '3,000', 'Deal', 'h-[250px]');
+        createGrid('grid-3500', 15, '3,500', 'Essential', 'h-[250px]');
+        createGrid('grid-4000', 15, '4,000', 'Signature', 'h-[400px]');
+        createGrid('grid-5000', 15, '5,000', 'Elite', 'h-[450px]');
+
+        function order(name, price) {
+            const msg = `Hi RichKid Boutique! ⚜️ I'm interested in the ${name} ($${price} JMD). Is it available?`;
+            window.open(`https://wa.me/18763047407?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        window.addEventListener('scroll', () => {
+            document.querySelectorAll('.reveal').forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 50) el.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
